@@ -1,0 +1,43 @@
+<!-- 
+/*
+* @Author: SF2556
+* @Date:   2018-04-18 08:18:06
+* @Last Modified by:   DangChaofeng
+* @Last Modified time: 2018-04-19 09:32:19
+*/
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MVVM</title>
+</head>
+<body>
+
+<div id="mvvm-app">
+    <input type="text" v-model="someStr.some">
+    <p>{{someStr.some}}</p>
+</div>
+<script src="../babel.min.js"></script>
+<script src="./js/observer.js"></script>
+<script src="./js/watcher.js"></script>
+<script src="./js/compile.js"></script>
+<script src="./js/mvvm.js"></script>
+<script>
+    var vm = new MVVM({
+        el: '#mvvm-app',
+        data: {
+            someStr: {
+                some: 'hello'
+            }
+        },
+        computed: {
+            getHelloWord: function() {
+                return this.someStr.some + this.child.someStr;
+            }
+        }
+    });
+</script>
+
+</body>
+</html>
