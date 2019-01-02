@@ -39,6 +39,7 @@
 
         computed: {
             // 一个computed计算属性，用到的地方，都会new一个watcher，watcher挂载的数据劫持对象为，someStr和child.someStr两个（内部所需要访问的所有key）；
+            // 在源码中也会发现，getHelloWord自身也会new一个watcher，供后续使用。
             getHelloWord: function() {
                 return this.someStr + this.child.someStr;
             }
