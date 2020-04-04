@@ -146,8 +146,6 @@ Publisher.on('a', function(data){
 Publisher.emit('a', '我是第1次调用的参数');
  
 Publisher.emit('a', '我是第2次调用的参数');　
-
-//test
 ```
 
 
